@@ -5,6 +5,7 @@ import HomeComponent from "./HomeComponents/HomeComponent";
 import ResidentialComponent from "./NewConstructionComponents/ResidentailComponent";
 import NonResidentialComponent from "./NewConstructionComponents/NonResidentailComponent";
 import RenovationComponent from "./RenovationDesignComponents/RenovationComponent";
+import InternshipComponent from "./InternshipComponents/InternshipComponent";
 
 const Stack = createStackNavigator();
 class Router extends React.Component {
@@ -26,6 +27,10 @@ class Router extends React.Component {
           <Stack.Screen
             name="RenovationComponent"
             component={RenovationComponent}
+          /> 
+         <Stack.Screen
+            name="InternshipComponent" 
+            component={InternshipComponent}
           />
         </Stack.Navigator>
       </NavigationContainer>

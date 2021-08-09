@@ -5,6 +5,9 @@ import { Asset } from "expo-asset";
 import Router from "./Components/RouterComponent";
 import NetInfo from "@react-native-community/netinfo";
 import { firestore } from "./firebase/script";
+import { Dimensions } from "react-native";
+import Constants from 'expo-constants';
+import { theme } from "./theme/theme";
 LogBox.ignoreLogs(["Setting a timer"]);
 function cacheImages(images) {
   return images.map((image) => {
@@ -15,6 +18,10 @@ function cacheImages(images) {
     }
   });
 }
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+const STATUSBAR_HEIGHT = Constants.statusBarHeight
 
 export default class App extends React.Component {
   state = {
@@ -39,6 +46,7 @@ export default class App extends React.Component {
             require("./assets/img/residential.png"),
             require("./assets/img/non-residential.png"),
             require("./assets/img/interior.png"),
+            require("./assets/img/internship.png"),
             require("./assets/resources/residential_background.jpg"),
             require("./assets/resources/interioi_background.png"),
             require("./assets/icons/residence_icon.png"),
@@ -54,8 +62,10 @@ export default class App extends React.Component {
             require("./assets/icons/www.png"),
             require("./assets/icons/email.png"),
             require("./assets/icons/google-maps.png"),
+            require("./assets/icons/internship.png"),
           ]);
           await Promise.all([...imageAssets, ...internalAssets]);
+          this.setState({isReady: true});
         }
       } else {
         const internalAssets = cacheImages([
@@ -63,6 +73,7 @@ export default class App extends React.Component {
           require("./assets/img/residential.png"),
           require("./assets/img/non-residential.png"),
           require("./assets/img/interior.png"),
+          require("./assets/img/internship.png"),
           require("./assets/resources/residential_background.jpg"),
           require("./assets/resources/interioi_background.png"),
           require("./assets/icons/residence_icon.png"),
@@ -78,20 +89,31 @@ export default class App extends React.Component {
           require("./assets/icons/www.png"),
           require("./assets/icons/email.png"),
           require("./assets/icons/google-maps.png"),
+          require("./assets/icons/internship.png"),
         ]);
         await Promise.all([...internalAssets]);
+        this.setState({isReady: true})
       }
     });
   };
 
+  componentDidMount()  {
+    this._loadAssetsAsync();
+  }
+
   render() {
     if (!this.state.isReady) {
       return (
-        <AppLoading
+        <View>
+          <View style={{width: windowWidth, height: windowHeight + STATUSBAR_HEIGHT, backgroundColor: theme.main_color_dark}}>
+            <Image source={require("./assets/img/splash-screens/splash.png")} style={{width: windowWidth, height: windowHeight + STATUSBAR_HEIGHT}}  />
+          </View>
+          {/* <AppLoading
           startAsync={this._loadAssetsAsync}
           onFinish={() => this.setState({ isReady: true })}
           onError={console.warn}
-        />
+        /> */}
+        </View>
       );
     }
 

@@ -10,12 +10,14 @@ import { theme } from "../../theme/theme";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-export default SimpleCard = ({ props, touchable, reversed }) => {
+export default SimpleCard = ({ props, touchable, reversed, navigation, newPage }) => {
   return (
     <TouchableOpacity
       onPress={() => {
         if (touchable) {
           Linking.openURL(props.url);
+        }else if(newPage) {
+          navigation.navigate("InternshipComponent")
         }
       }}
       activeOpacity={1}

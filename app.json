@@ -14,14 +14,8 @@
       "buildNumber": "1.0.0"
     },
     "android": {
-      "splash": {
-        "image": "./assets/img/splash-screens/splash.png",
-
-        "resizeMode": "cover",
-        "backgroundColor": "#234F66"
-      },
       "package": "com.msrconstruction.co",
-      "versionCode": 2,
+      "versionCode": 3,
       "permissions": []
     },
     "description": " "

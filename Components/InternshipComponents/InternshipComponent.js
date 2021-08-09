@@ -1,21 +1,19 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
-import { ScrollView } from "react-native";
 import { View, Text } from "react-native";
 import { theme } from "../../theme/theme";
-import FormComponent from "../SharedComponents/FormComponent";
 import Boilerplate from "../SharedComponents/LayoutBoilerplate";
 import SimpleCard from "../SharedComponents/SimpleCardComponent";
+import InternshipFormComponent from "./InternshipFormComponent";
 
 const InternshipComponent = ({ props, navigation }) => {
   //   props = props.props;
   return (
     <Boilerplate
       component={<RenovationBody navigation={navigation} />}
-      avatar={require("../../assets/icons/internship.png")}
+      avatar={require("../../assets/img/internship.png")}
       back
       navigation={navigation}
-      currentTheme={theme.interior}
+      currentTheme={theme.internship}
     />
   );
 };
@@ -27,18 +25,18 @@ const RenovationBody = ({ navigation }) => {
         <SimpleCard
           props={{
             bgcolor: theme.success_light,
-            content: "Have a complete Hassle free Experience with us",
+            content: "We provide Internships and Inplant tranings for College Students",
             icon: require("../../assets/icons/sign.png"),
             fontSize: 18,
           }}
         />
       </View>
       <View style={{ marginLeft: 20, marginBottom: 500 }}>
-        <FormComponent
-          title="Tell us what you need!"
-          bgcolor={theme.interior.secondary_color}
-          about="Interior Designing / Renovations"
-          btnColor={theme.interior.main_color}
+        <InternshipFormComponent
+          title="Register for Traning"
+          bgcolor={theme.internship.secondary_color}
+          about="Internships and Inplant trainings"
+          btnColor={theme.internship.main_color}
         />
       </View>
     </View>

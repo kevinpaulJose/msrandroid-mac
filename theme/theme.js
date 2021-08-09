@@ -37,6 +37,13 @@ export const theme = {
     beta_color: "#ffe49f",
     card_color: "#d9cfc5",
   },
+  internship: {
+    main_color: "#557DCD",
+    secondary_color: "#edf4ff",
+    success_color: "#77c080",
+    beta_color: "#ffe49f",
+    card_color: "#d9cfc5",
+  },
   url: {
     baseURL: "https://msrconstruction.co.in",
     emailApi: "https://api.emailjs.com/api/v1.0/email/send-form",

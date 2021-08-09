@@ -72,7 +72,7 @@ const HomeBodyComponent = ({ navigation }) => {
           reversed={false}
         />
       </View>
-      <View style={{ marginLeft: 20, marginBottom: 30 }}>
+      <View style={{ marginLeft: 20 }}>
         <SimpleCard
           props={{
             bgcolor: theme.maps_background,
@@ -86,6 +86,34 @@ const HomeBodyComponent = ({ navigation }) => {
           reversed={false}
         />
       </View>
+      <TouchableOpacity
+        onPress={() => {
+          // navigation.navigate("InternshipComponent")
+          console.log("clicked");
+        }}
+        style={{
+          marginLeft: 20,
+          marginBottom: 30,
+          // width: 100,
+          // height: 100,
+          // backgroundColor: "red",
+        }}
+      >
+        <View>
+          <SimpleCard
+            props={{
+              bgcolor: theme.internship.secondary_color,
+              content: "Internships and Inplant Tranings",
+              icon: require("../../assets/icons/internship.png"),
+              fontSize: 20,
+              small_content: "Register here",
+            }}
+            reversed={false}
+            newPage
+            navigation={navigation}
+          />
+        </View>
+      </TouchableOpacity>
     </>
   );
 };
