@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "MSR Construction",
+    "icon": "icon.png",
+    "version": "1.1.0",
+    "slug": "msr-construction",
+    "ios": {
+      "splash": {
+        "image": "./assets/img/splash-screens/splash.png",
+        "resizeMode": "cover",
+        "backgroundColor": "#234F66"
+      },
+      "bundleIdentifier": "com.msrconstruction.co",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "splash": {
+        "image": "./assets/img/splash-screens/splash.png",
+
+        "resizeMode": "cover",
+        "backgroundColor": "#234F66"
+      },
+      "package": "com.msrconstruction.co",
+      "versionCode": 2,
+      "permissions": []
+    },
+    "description": " "
+  }
+}
