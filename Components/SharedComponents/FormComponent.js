@@ -281,7 +281,7 @@ class FormComponent extends React.Component {
                           id: this.state.id,
                           about: this.props.about,
                           to_name: this.state.to_name,
-                          to_email: "msrconstruction.co.in@gmail.com",
+                          to_email: "rmrbking@gmail.com",
                           message:
                             this.state.comments +
                             "\n" +

@@ -42,7 +42,7 @@ const NonResidentialBody = ({ navigation }) => {
         <SimpleCard
           props={{
             bgcolor: theme.success_light,
-            content: "Load Approval Guidance and Support",
+            content: "Loan Approval Guidance and Support",
             icon: require("../../assets/icons/loan.png"),
             fontSize: 18,
           }}
